@@ -3,7 +3,8 @@ Mobile-API for [GM Online](https://play.google.com/store/apps/details?id=com.CGD
 
 ## Example
 ```python
-import gm_online
-gm_online = gm_online.GMOnline()
+from gm_online import GmOnline
+
+gm_online = GmOnline()
 gm_online.login(username="", password="")
 ```
