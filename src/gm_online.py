@@ -15,7 +15,7 @@ class GmOnline:
 		self.session_ticket = None
 
 	def _post(self, endpoint: str, data: dict = None) -> dict:
-		return self._post(f"{self.api}{endpoint}", json=data).json()
+		return self.session.post(f"{self.api}{endpoint}", json=data).json()
 
 	def login(
 			self,
@@ -54,7 +54,7 @@ class GmOnline:
 		return self._post("/GetAccountInfo", data=data)
 
 	def get_inventory(self) -> dict:        
-		return self._post("/GetUserInventory").json()
+		return self._post("/GetUserInventory")
 
 	def get_store_items(
 			self,
